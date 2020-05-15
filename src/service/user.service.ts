@@ -15,10 +15,16 @@ export class UserService {
   constructor(private httpClient: HttpClient) { }
 
    URL1 = 'http://localhost:8080/user/listUsers';
+   URL = 'http://localhost:8080/user/listMember';
    URL_UPDATE = 'http://localhost:8080/user/updateUser';
 
    getAllUser(): Observable<any> {
     return this.httpClient.get(this.URL1);
+  }
+
+  getUserByCreated() {
+    let id = sessionStorage.getItem('id');
+    return this.httpClient.get(`${this.URL}/${id}`);
   }
 
 

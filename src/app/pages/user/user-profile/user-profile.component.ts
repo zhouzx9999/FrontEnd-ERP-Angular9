@@ -29,8 +29,8 @@ export class UserProfileComponent implements OnInit {
       this.users = data ;
     });
 
-    this.userService.getAllUser().subscribe(data => {
-      this.allUsers = data.content ;
+    this.userService.getUserByCreated().subscribe(data => {
+      this.allUsers = data ;
       console.log(this.allUsers);
 
     });
